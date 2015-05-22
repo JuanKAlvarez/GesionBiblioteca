@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Biblioteca</title>
 
+	<title>Biblioteca</title>
+	<link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/material-fullpalette.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/ripples.css') }}" rel="stylesheet">
