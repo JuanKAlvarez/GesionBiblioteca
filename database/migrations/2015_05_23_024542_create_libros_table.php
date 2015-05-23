@@ -15,6 +15,26 @@ class CreateLibrosTable extends Migration {
 		Schema::create('libros', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('isbn');
+			$table->string('Titulo');
+			$table->string('edision');
+			$table->string('paginas');
+			$table->string('año');
+
+			$table->integer('ubicacion_id')->unsigned();
+			$table->integer('editorial_id')->unsigned();
+			$table->integer('autor_id')->unsigned();
+			$table->integer('tema_id')->unsigned();
+			$table->integer('idioma_id')->unsigned();
+
+			$table->foreign('ubicacion')->references('id')->on('ubicasiones');
+			$table->foreign('editorial_id')->references('id')->on('editoriales');
+			$table->foreign('autor_id')->references('id')->on('autores');
+			$table->foreign('tema_id')->references('id')->on('temas');
+			$table->foreign('idioma_id')->references('id')->on('idiomas');
+			
+
+
 			$table->timestamps();
 		});
 	}

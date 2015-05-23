@@ -15,6 +15,11 @@ class CreateEjemplaresTable extends Migration {
 		Schema::create('ejemplares', function(Blueprint $table)
 		{
 			$table->increments('id');
+
+			$table->integer('libro_id')->unsigned();
+
+			$table->foreign('libro_id')->references('id')->on('libros');
+			
 			$table->timestamps();
 		});
 	}

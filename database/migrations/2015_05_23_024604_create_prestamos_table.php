@@ -15,6 +15,16 @@ class CreatePrestamosTable extends Migration {
 		Schema::create('prestamos', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->date('fecha_prestamo');
+			$table->date('fecha_devolucion');
+
+
+			$table->integer('user_id')->unsigned();
+			$table->integer('ejemplar_id')->unsigned();
+
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('ejemplar_id')->references('id')->on('ejemplares');
+
 			$table->timestamps();
 		});
 	}
