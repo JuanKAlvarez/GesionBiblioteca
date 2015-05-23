@@ -27,7 +27,7 @@ class CreateLibrosTable extends Migration {
 			$table->integer('tema_id')->unsigned();
 			$table->integer('idioma_id')->unsigned();
 
-			$table->foreign('ubicacion')->references('id')->on('ubicasiones');
+			$table->foreign('ubicacion_id')->references('id')->on('ubicaciones');
 			$table->foreign('editorial_id')->references('id')->on('editoriales');
 			$table->foreign('autor_id')->references('id')->on('autores');
 			$table->foreign('tema_id')->references('id')->on('temas');
