@@ -31,4 +31,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 	
+	public function isAdmin()
+	{
+		return  $this->type === 'admin';
+	}
+
+	public function is($type)
+	{
+		
+		return  $this->type === $type;
+	}
 }
