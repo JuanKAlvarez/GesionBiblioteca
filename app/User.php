@@ -1,4 +1,5 @@
-<?php namespace App;
+<?php 
+namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -30,7 +31,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
-	
+
 	public function isAdmin()
 	{
 		return  $this->type === 'admin';

@@ -22,5 +22,11 @@ Route::controllers([
 
 Route::group(['prefix'=>'admin', 'middleware'=> [ 'auth', 'is_admin'] ], function()
 {
-    Route::get('users', 'HomeController@users');
+    //Route::get('users', 'UsersController@index');
+	
+	Route::controllers([
+		'users' => 'UsersController',
+
+	]);
+
 });
