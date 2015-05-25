@@ -19,3 +19,8 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['prefix'=>'admin', 'middleware'=> [ 'auth', 'is_admin'] ], function()
+{
+    Route::get('users', 'HomeController@users');
+});
