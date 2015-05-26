@@ -20,13 +20,13 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(['prefix'=>'admin', 'middleware'=> [ 'auth', 'is_admin'] ], function()
+Route::group(['prefix'=>'admin', 'namespace' => '\Admin', 'middleware'=> [ 'auth', 'is_admin'] ], function()
 {
-    //Route::get('users', 'UsersController@index');
+    Route::resource('users', 'UsersController');
 	
-	Route::controllers([
-		'users' => 'UsersController',
+	//Route::controllers([
+	//	'users' => 'UsersController',
 
-	]);
+	//]);
 
 });
