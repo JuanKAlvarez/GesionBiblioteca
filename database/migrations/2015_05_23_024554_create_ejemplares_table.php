@@ -15,6 +15,7 @@ class CreateEjemplaresTable extends Migration {
 		Schema::create('ejemplares', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('estado');
 
 			$table->integer('libro_id')->unsigned();
 

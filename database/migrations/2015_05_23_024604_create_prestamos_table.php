@@ -17,6 +17,8 @@ class CreatePrestamosTable extends Migration {
 			$table->increments('id');
 			$table->date('fecha_prestamo');
 			$table->date('fecha_devolucion');
+			$table->string('estado');
+
 
 
 			$table->integer('user_id')->unsigned();
