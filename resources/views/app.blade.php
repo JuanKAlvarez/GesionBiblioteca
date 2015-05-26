@@ -11,6 +11,7 @@
 	<link href="{{ asset('/css/material-fullpalette.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/ripples.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/roboto.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>

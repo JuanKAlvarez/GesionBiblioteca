@@ -62,8 +62,10 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Biblioteca</div>
+			<div class="">
+				<a style=" padding:25px; " href="{{ url('/auth/login') }}" class="btn btn-primary btn-lg btn-block" role="button">Ingresa a la Aplicasión</a>
+			</div>
 				 
-				 <a href="{{ url('/auth/login') }}" class="btn btn-primary btn-lg" role="button">Ingresa a la Aplicasión</a>
 			</div>
 		</div>
 	</body>
