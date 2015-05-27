@@ -15,9 +15,34 @@
 						<a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#crearUserModal">Crear Usuario</a>
 					</div>
 
+				<div class="row">
+						{!!  Form::model(Request::only(['name','type','descripcion'])	,
+								[ 
+								'route'		=>	'admin.users.index',
+								'method'	=>	'GET', 
+								'class'		=>	'sombra navbar-form navbar-left pull-right', 
+								'role'		=>	'search'
 
-					{!! $users->setPath('')->render() !!}
-					<div class="table-responsive">
+								]
+							) 
+						!!}
+						<div class="form-group">
+						{!! Form::text('name',	null,[ 'class'	=>	' form-control input-sm', 'placeholder'	=>	'Nombre' ]) !!}	
+						{!! Form::select('type', config('options.types'),null,[ 'class'	=>	' form-control input-sm' ]) !!}	
+						{!! Form::select('descripcion', config('options.descripcion'),null,[ 'class'	=>	' form-control input-sm' ]) !!}	
+						</div>
+						<button type="submit" class="btn btn-info btn-sm">Buscar</button>
+
+					{!!  Form::close() !!}
+
+			{!! $users->setPath('')->appends(Request::only(['name','type','descripcion']))->render() !!}
+			
+				</div>
+						
+					
+
+
+					<div class="  table-responsive">
 						<table class="table">
 							<tr>
 								<th class="">#</th>
@@ -47,7 +72,9 @@
 							@endforeach
 						</table>
 					</div>
-					{!! $users->setPath('')->render() !!}
+			{!! $users->setPath('')->appends(Request::only(['name','type','descripcion']))->render() !!}
+			
+					
 
 				</div>
 			</div>

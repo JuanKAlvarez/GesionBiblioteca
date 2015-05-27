@@ -16,9 +16,16 @@ class UsersController  extends Controller {
 
 
 
-	public function index()
+	public function index(Request $recuest)
 	{
-		$users = User::paginate(10);
+
+		
+		$users = User::filterAndPaginate(
+							$recuest->get('name'), 
+							$recuest->get('type'), 
+							$recuest->get('descripcion')	
+							);
+
 		return view('admin.usuarios', compact('users'));
 	}
 

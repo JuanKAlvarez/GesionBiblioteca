@@ -8,6 +8,7 @@
 	<title>Biblioteca</title>
 	<link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/css.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/material-fullpalette.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/ripples.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/roboto.css') }}" rel="stylesheet">

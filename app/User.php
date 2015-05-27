@@ -51,4 +51,45 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		
 		return  $this->type === $type;
 	}
+	
+	public function scopeName($query , $name)
+	{
+		if (trim($name) != "" ) {
+			
+			$query->where("name" , "LIKE", "%$name%");
+		}
+	}
+
+	public function scopeType($query , $type)
+	{
+		
+		$types = config('options.types');
+
+		if ($type != ""  &&  isset($types[$type])) {
+			
+			$query->where("type" , $type);
+		}
+	}
+
+	public function scopeDescripcion($query , $descripcion)
+	{
+		$descripciones = config('options.descripcion');
+
+		if ($descripcion != ""  &&  isset($descripciones[$descripcion])) {
+			
+			$query->where("descripcion" , $descripcion);
+		}
+	}
+
+	public static function filterAndPaginate($name, $type, $descripcion)
+	{
+		
+		return User::name($name)
+					->type($type)
+					->descripcion($descripcion)
+					->paginate(10);
+	}
+
+
+
 }
