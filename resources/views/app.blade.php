@@ -40,8 +40,10 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
-					
-					<li><a href="{{ url('/admin/users') }}">Users</a></li>
+					@if (! Auth::guest() && \Auth::user()->type === 'admin')
+						<li><a href="{{ url('/admin/users') }}">Users</a></li>
+					@endif
+						<li><a href="{{ url('/catalogo') }}">Catalogo</a></li>
 
 				</ul>
 
@@ -53,6 +55,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/user/profile') }}">Mi Perfil</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Salir</a></li>
 							</ul>
 						</li>

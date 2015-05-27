@@ -24,7 +24,7 @@
 								'role'		=>	'search'
 
 								]
-							) 
+							) 	
 						!!}
 						<div class="form-group">
 						{!! Form::text('name',	null,[ 'class'	=>	' form-control input-sm', 'placeholder'	=>	'Nombre' ]) !!}	

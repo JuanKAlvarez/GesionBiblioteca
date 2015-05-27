@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::resource('catalogo', 'CatalogoController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -23,10 +25,11 @@ Route::controllers([
 Route::group(['prefix'=>'admin', 'namespace' => '\Admin', 'middleware'=> [ 'auth', 'is_admin'] ], function()
 {
     Route::resource('users', 'UsersController');
-	
-	//Route::controllers([
-	//	'users' => 'UsersController',
 
-	//]);
+});
+
+Route::group(['prefix'=>'user', 'middleware'=> [ 'auth'] ], function()
+{
+    Route::resource('profile', 'UserProfileController');
 
 });

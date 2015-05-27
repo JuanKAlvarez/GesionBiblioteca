@@ -28,6 +28,7 @@ class CreatePrestamosTable extends Migration {
 			$table->foreign('ejemplar_id')->references('id')->on('ejemplares');
 
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

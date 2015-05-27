@@ -17,6 +17,7 @@ class CreateTemasTable extends Migration {
 			$table->increments('id');
 			$table->string('tema');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

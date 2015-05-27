@@ -17,6 +17,7 @@ class CreateUbicacionesTable extends Migration {
 			$table->increments('id');
 			$table->string('ubicacion');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

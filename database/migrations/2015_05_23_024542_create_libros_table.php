@@ -16,7 +16,7 @@ class CreateLibrosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('isbn');
-			$table->string('Titulo');
+			$table->string('titulo');
 			$table->string('edision');
 			$table->string('paginas');
 			$table->string('año');
@@ -36,6 +36,7 @@ class CreateLibrosTable extends Migration {
 
 
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

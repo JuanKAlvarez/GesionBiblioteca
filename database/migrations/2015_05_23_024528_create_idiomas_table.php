@@ -17,6 +17,7 @@ class CreateIdiomasTable extends Migration {
 			$table->increments('id');
 			$table->string('idioma');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

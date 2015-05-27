@@ -50,34 +50,6 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Descripción</label>
-							<div class="col-md-6">
-								
-								<select class="form-control" name="descripcion" value="{{ old('descripcion') }}">
-								  <option value="visitante" >Visitante</option> 
-								  <option value="estudiante" >Estudiante</option>
-								  <option value="dosente">Dosente</option>
-								  <option value="otro">Otro</option>
-								</select>
-
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Telefono</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="telefono" value="{{ old('telefono') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Dirección</label>
-							<Div class="col-md-6">
-								<input type="text" class="form-control" name="direccion" value="{{ old('direccion') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
 									Registrate

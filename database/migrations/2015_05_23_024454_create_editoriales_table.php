@@ -22,6 +22,7 @@ class CreateEditorialesTable extends Migration {
 			$table->string('direccion');
 			$table->string('sede');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

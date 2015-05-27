@@ -22,6 +22,7 @@ class CreateEjemplaresTable extends Migration {
 			$table->foreign('libro_id')->references('id')->on('libros');
 			
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
