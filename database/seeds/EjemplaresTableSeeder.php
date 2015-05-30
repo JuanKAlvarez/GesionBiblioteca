@@ -17,6 +17,7 @@ class EjemplaresTableSeeder extends Seeder{
 			\DB::table('ejemplares')->insert(array(
 
 					'estado'	=>	$faker->randomElement($array = array ('Disponible','Prestado')),
+					'ubicacion_id'	=>	$faker->numberBetween($min = 1, $max = 5),
 					'libro_id'	=>	$i,
 
 				));
@@ -25,6 +26,7 @@ class EjemplaresTableSeeder extends Seeder{
 		\DB::table('ejemplares')->insert(array(
 				
 				'estado'=>'Uso Interno',
+				'ubicacion_id'	=>	$faker->numberBetween($min = 1, $max = 5),
 				'libro_id'	=>	$i
 
 				));
@@ -32,6 +34,7 @@ class EjemplaresTableSeeder extends Seeder{
 		\DB::table('ejemplares')->insert(array(
 			
 			'estado'=>'Uso Interno',
+			'ubicacion_id'	=>	$faker->numberBetween($min = 1, $max = 5),
 			'libro_id'	=>	$i
 
 			));

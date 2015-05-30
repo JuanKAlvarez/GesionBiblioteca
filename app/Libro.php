@@ -14,6 +14,38 @@ class Libro extends Model {
 
     protected $fillable = ['isbn', 'titulo', 'edision','paginas', 'año', 'ubicacion_id', 'editorial_id', 'autor_id', 'tema_id', 'idioma_id'];
 
+	
+
+
+	public function ejemplar()
+    {
+        return $this->hasMany('App\Ejemplar');
+    }
+
+    public function editorial()
+    {
+        return $this->belongsTo('App\Editorial');
+    }
+
+    public function autor()
+    {
+        return $this->belongsTo('App\Autor');
+    }
+
+    public function tema()
+    {
+        return $this->belongsTo('App\Tema');
+    }
+
+    public function idioma()
+    {
+        return $this->belongsTo('App\Idioma');
+    }
+
+
+
+
+
 	public function scopeTitulo($query , $titulo)
 	{
 		if (trim($titulo) != "" ) {
@@ -22,10 +54,6 @@ class Libro extends Model {
 		}
 	}
 
-	public function ejemplares()
-    {
-        return $this->hasMany('ejemplares','id');
-    }
 
 	public function getUbicasion()
 	{
@@ -59,7 +87,7 @@ class Libro extends Model {
 	{
 		
 		return Libro::titulo($titulo)
-					->with('ejemplares')
+
 					->paginate(10);
 	}
 

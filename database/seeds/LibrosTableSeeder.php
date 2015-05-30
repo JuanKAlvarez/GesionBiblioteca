@@ -20,7 +20,6 @@ class LibrosTableSeeder extends Seeder{
 				'edision'		=>	$faker->numberBetween($min = 1, $max = 9),
 				'paginas'		=>	$faker->numberBetween($min = 100, $max = 1000),
 				'año'			=>	$faker->year($max = 'now'),
-				'ubicacion_id'	=>	$faker->numberBetween($min = 1, $max = 5),
 				'editorial_id'	=>	$faker->numberBetween($min = 1, $max = 5),
 				'autor_id'		=>	$faker->numberBetween($min = 1, $max = 15),
 				'tema_id'		=>	$faker->numberBetween($min = 1, $max = 9),

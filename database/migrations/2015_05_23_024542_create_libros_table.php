@@ -21,13 +21,11 @@ class CreateLibrosTable extends Migration {
 			$table->string('paginas');
 			$table->string('año');
 
-			$table->integer('ubicacion_id')->unsigned();
 			$table->integer('editorial_id')->unsigned();
 			$table->integer('autor_id')->unsigned();
 			$table->integer('tema_id')->unsigned();
 			$table->integer('idioma_id')->unsigned();
 
-			$table->foreign('ubicacion_id')->references('id')->on('ubicaciones');
 			$table->foreign('editorial_id')->references('id')->on('editoriales');
 			$table->foreign('autor_id')->references('id')->on('autores');
 			$table->foreign('tema_id')->references('id')->on('temas');

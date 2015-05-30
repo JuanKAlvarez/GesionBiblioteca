@@ -12,13 +12,13 @@ class AdminTableSeeder extends Seeder{
 
 	\DB::table('users')->insert(array(
 		
-			'name'			=>		'Juan Alvarez',
+			'name'			=>		'Manuel Blanco',
 			'email'			=>		'JuanAlvarezCuartas@hotmail.com',
 			'password'		=>		\Hash::make('123456'),
 			'type'			=>		'admin',
 			'descripcion'	=>		'Biblitecario',
 			'telefono'		=>		'4530447',
-			'direccion'		=>		'Av. 38 B Diag. 42 DD 43 INT(201)'
+			'direccion'		=>		'Av. 38 B Diag. 42 DD 43'
 
 		));
 

@@ -40,7 +40,6 @@
 								<th class="">EDISION</th>
 								<th class="">PAGINAS</th>
 								<th class="">AÑO</th>
-								<th class="">UBICACIÓN</th>
 								<th class="">EDITORIAL</th>
 								<th class="">AUTOR</th>
 								<th class="">TEMA</th>
@@ -53,16 +52,16 @@
 								<td class=""> {{$libro->titulo}} </td>
 								<td class=""> {{$libro->edision}} </td>
 								<td class=""> {{$libro->paginas}} </td>
-								<td class=""> {{$libro->año}} </td>
-								<td class=""> {{$libro->ubicacion_id}} </td>
-								<td class=""> {{$libro->editorial_id}} </td>
-								<td class=""> {{$libro->autor_id}} </td>
-								<td class=""> {{$libro->tema_id}} </td>
-								<td class=""> {{$libro->idioma_id}} </td>
+								<td class=""> {{$libro->año}} </td>						
+								<td class=""> {{$libro->editorial->nombre}} </td> 
+								<td class=""> {{$libro->autor->name}} </td>
+								<td class=""> {{$libro->tema->tema}} </td>
+								<td class=""> {{$libro->idioma->idioma}} </td>
 								<td class="">
-									<i 
+									@if(! Auth::guest() && \Auth::user()->type === 'admin')
+										<i 
 										class="fa fa-pencil btn btn-primary btn-xs btn-block" 
-										data-target="#editUser{{$libro->id}}"
+										data-target="#edit{{$libro->id}}"
 										data-toggle="modal" 
 										style=" margin: 0"  
 										title="Editar" 
@@ -70,12 +69,24 @@
 									></i>				
 									<i 
 										class="fa fa-times btn btn-danger btn-xs btn-block" 
-										data-target="#deletetUser{{$libro->id}}"
+										data-target="#deletet{{$libro->id}}"
 										data-toggle="modal" 
 										style=" margin: 0" 
 										title="Borrar"
 										role="button" 
+									></i>								
+
+									@endif
+
+									<i 
+										class="fa  fa-eye btn btn-info btn-xs btn-block" 
+										data-target="#see{{$libro->id}}"
+										data-toggle="modal" 
+										style=" margin: 0" 
+										title="Ver Mas"
+										role="button" 
 									></i>
+
 								</td>
 							</tr>
 

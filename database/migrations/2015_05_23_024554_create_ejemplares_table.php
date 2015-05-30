@@ -18,8 +18,10 @@ class CreateEjemplaresTable extends Migration {
 			$table->string('estado');
 
 			$table->integer('libro_id')->unsigned();
+			$table->integer('ubicacion_id')->unsigned();
 
 			$table->foreign('libro_id')->references('id')->on('libros');
+			$table->foreign('ubicacion_id')->references('id')->on('ubicaciones');
 			
 			$table->timestamps();
 			$table->softDeletes();
